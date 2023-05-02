@@ -1,28 +1,42 @@
-import Header 
 
-<script setup>
+<script>
+import axios from 'axios';
+import { store } from './data/store';
+import cardContainer from './components/cardContainer.vue';
+export default{
+  name: "App",
+  components:{
+    cardContainer
+  },
+  methods: {
+    getApi(){
+      axios.get(store.apiUrl)
+      .then(result => {
+        store.resultArray = result.data;
+        console.log(result.data);
+      })
+    }
+  },
+  mounted(){
+    this.getApi();
+  }
+}
 
 </script>
 
 <template>
 
-<h1>ciao</h1>
+  <div class="container">
+    <cardContainer />
+  </div>
 
-<p></p>
 
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-@use './scss/header.scss';
-
-body {
-  
-}
-
-h1 {
-
-}
+@use './scss/general.scss';
+@import 'bootstrap/scss/bootstrap.scss'
 
 </style>
