@@ -7,8 +7,10 @@ export default {
 
 <template>
 
-  <p>{{ cardData.name }}</p>
   <img :src="cardData.card_images[0].image_url" alt="">
+  <h6>{{ cardData.name }}</h6>
+  <p>{{ cardData.type }}</p>
+
 
 </template>
 

@@ -16,9 +16,10 @@ export default {
 
 <template>
 
-  <div class="c-cards">
+  <div class="c-card d-flex flex-wrap gap-3">
 
-    <div v-for="(cardObj, index) in store.resultArray" :key="index">
+    <div v-for="(cardObj, index) in store.resultArray" :key="index"
+    id="c-card">
       <card :cardData="cardObj"/>
     </div>
 
