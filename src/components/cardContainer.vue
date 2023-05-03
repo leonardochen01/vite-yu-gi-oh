@@ -20,7 +20,6 @@ export default {
 
     <div v-for="(cardObj, index) in store.resultArray" :key="index">
       <card :cardData="cardObj"/>
-      <p>{{ cardObj.name }}</p>
     </div>
 
   </div>

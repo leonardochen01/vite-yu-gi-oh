@@ -12,8 +12,8 @@ export default{
     getApi(){
       axios.get(store.apiUrl)
       .then(result => {
-        store.resultArray = result.data;
-        console.log(result.data);
+        store.resultArray = result.data.data;
+        console.log(result.data.data);
       })
     }
   },
